@@ -6,6 +6,24 @@ The metrics server is commonly used by other Kubernetes add ons, such as the Hor
 
 It is not deployed by default.
 
+## Deployment
+In order to deploy metrics-server in your kubernetes master machine clone https://github.com/MithunTechnologiesDevOps/metrics-server.git  and run the following command from
+the top-level directory(metrics-server) of this repository:
+ 
+```console
+$ kubectl create -f deploy/1.8+/
+```
+
+## Usage
+
+```console
+# Display node metrics
+$ kubectl top nodes
+
+# Display pod metrics
+$ kubectl top pods
+```
+
 ## User guide
 
 You can find the user guide in
@@ -22,21 +40,3 @@ The detailed design of the project can be found in the following docs:
 
 For the broader view of monitoring in Kubernetes take a look into
 [Monitoring architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md)
-
-## Deployment
-In order to deploy metrics-server in your cluster clone (https://github.com/kubernetes-sigs/metrics-server.git) run the following command from
-the top-level directory(metrics-server) of this repository:
-
-```console
-$ kubectl create -f deploy/1.8+/
-```
-
-## Usage
-
-```console
-# Display node metrics
-$ kubectl top nodes
-
-# Display pod metrics
-$ kubectl top pods
-```
