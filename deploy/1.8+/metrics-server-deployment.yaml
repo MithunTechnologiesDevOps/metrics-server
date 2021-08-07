@@ -48,4 +48,4 @@ spec:
         - name: tmp-dir
           mountPath: /tmp
       nodeSelector:
-        beta.kubernetes.io/os: linux
+        kubernetes.io/os: linux
